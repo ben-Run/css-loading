@@ -1,0 +1,102 @@
+* {
+  
+}
+body {
+  background:#f0f0f0;
+  box-sizing: border-box;
+}
+.loading-wrapper {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  margin-left:15px;
+}
+.loading-wrapper--item {
+  width: 120px;
+  height:120px;
+  padding: 15px;
+  border: 1px solid white;
+  margin-left: 15px;
+}
+.loading-wrapper--item:first-child {
+  margin-left:0;
+}
+
+.loading {
+   width: 120px;
+  height:120px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* loading1 */
+.loading1 {
+  box-shadow: inset 0 0 0 10px #1989fa;
+  border-radius: 50%;
+  position:relative;
+  animation: load1 2s infinite linear;
+}
+
+.loading1::before {
+   position: absolute;
+   content: '';
+   width: 60px;
+   height: 120px;
+   background:#f0f0f0;
+   border-radius: 0 50% 50% 0;
+   left: 60px;
+   transform-origin: 0px 120px;
+}
+
+.loading1::after {
+  position: absolute;
+  content: '';
+  width: 120px;
+  height: 120px;
+  border-radius:50%;
+  left: 0;
+  box-shadow: inset 0 0 0 10px rgba(255,255,255,.7);
+}
+
+@keyframes load1 {
+  0% {
+    -webkit-transform: rotate(0);
+     transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+     transform: rotate(360deg);
+  }
+}
+
+
+/* loading2 */
+.loading2 {
+  width: 20px;
+  height:20px;
+  font-size: 18px;
+  border-radius:50%;
+  /* background-color: white; */
+  box-shadow: -3em 2.5em 0 0.5em #fff, 0 2.5em 0 0.5em #fff, 3em 2.5em 0 0.5em #fff;
+  animation: load2 1.5s infinite linear;
+}
+
+/* 从二倍变为本身大小，又缩小二倍，在变为本身大小，又在放大为二倍 */
+@keyframes load2 {
+	0% {
+		box-shadow: -3em 2.5em 0 .5em #FFF, 0 2.5em 0 0 #FFF, 3em 2.5em 0 -.5em #FFF;
+	}
+	25% {
+		box-shadow: -3em 2.5em 0 0 #FFF, 0 2.5em 0 -.5em #FFF, 3em 2.5em 0 0 #FFF;
+	}
+	50% {
+		box-shadow: -3em 2.5em 0 -0.5em #FFF, 0 2.5em 0 0 #FFF, 3em 2.5em 0 .5em #FFF;
+	}
+	75% {
+		box-shadow: -3em 2.5em 0 0 #FFF, 0 2.5em 0 .5em #FFF, 3em 2.5em 0 0 #FFF;
+	}
+	100% {
+		box-shadow: -3em 2.5em 0 .5em #FFF, 0 2.5em 0 0 #FFF, 3em 2.5em 0 -.5em #FFF;
+	}
+}
